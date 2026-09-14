@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shanghai & Hangzhou · 19–26 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mist:#E9EFEA; --mist-deep:#D6E0D9; --pine:#1E3A2F; --ink:#17201B;
+  --seal:#B4382C; --gold:#B8963E; --paper:#F7F5EE; --muted:#5C6B62;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--mist);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;font-size:15px}
+.zh{font-family:"Noto Serif SC",serif}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0}
+
+/* hero */
+.hero{background:var(--pine);color:var(--paper);padding:56px 24px 40px}
+.hero .wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:.95;letter-spacing:-.01em}
+.hero h1 .zh{display:block;font-size:.42em;color:var(--mist-deep);margin-top:14px;letter-spacing:.14em;font-weight:400}
+.hero p{max-width:52ch;color:var(--mist-deep);margin:20px 0 0}
+.seal{width:118px;height:118px;border:3px solid var(--seal);border-radius:6px;color:var(--seal);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Noto Serif SC",serif;font-size:30px;line-height:1;transform:rotate(-4deg);background:rgba(180,56,44,.08)}
+.seal small{font-size:11px;font-family:Inter,sans-serif;margin-top:8px;color:var(--mist-deep)}
+.pax{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);color:var(--mist-deep);font-size:13.5px}
+.pax b{color:var(--paper);font-weight:500}
+
+/* flights */
+.flights{max-width:960px;margin:-18px auto 0;padding:0 24px}
+.fl{background:var(--paper);border:1px solid var(--mist-deep);display:grid;grid-template-columns:1fr 1fr 1fr;overflow:hidden}
+.fl>div{padding:22px 24px}
+.fl>div+div{border-left:1px solid var(--mist-deep)}
+.fl h3{font-size:22px;margin-bottom:10px}
+.leg{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13.5px;margin-bottom:8px}
+.leg b{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;line-height:1.1}
+.leg span{color:var(--muted)}
+.fl small{color:var(--muted);font-size:12.5px}
+
+/* days */
+main{max-width:960px;margin:0 auto;padding:40px 24px 80px}
+.day{margin-top:56px}
+.dayhead{display:flex;align-items:baseline;gap:18px;border-bottom:2px solid var(--pine);padding-bottom:10px;margin-bottom:8px;flex-wrap:wrap}
+.dayhead h2{font-size:34px}
+.dayhead .city{color:var(--seal);font-family:"Cormorant Garamond",serif;font-size:22px;font-style:italic}
+.dayhead .note{margin-left:auto;color:var(--muted);font-size:13px}
+
+.stop{display:grid;grid-template-columns:64px 180px 1fr;gap:0 20px;padding:18px 0;border-bottom:1px solid var(--mist-deep);align-items:start}
+.time{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:var(--pine);padding-top:2px}
+.photo{width:180px;height:130px;background:var(--mist-deep);overflow:hidden;position:relative;border-radius:2px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif SC",serif;font-size:40px;color:var(--pine);opacity:.35}
+.photo a.credit{position:absolute;right:4px;bottom:3px;font-size:9.5px;color:#fff;background:rgba(0,0,0,.45);padding:1px 5px;border-radius:2px;text-decoration:none}
+.body h3{font-size:22px;line-height:1.15}
+.body h3 .zh{font-size:.72em;color:var(--muted);margin-left:8px;font-weight:400}
+.body p{margin:6px 0 0}
+.meta{margin-top:8px;font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;padding:2px 8px;border:1px solid var(--pine);color:var(--pine);border-radius:2px;margin-right:8px;vertical-align:middle}
+.tag.food{border-color:var(--seal);color:var(--seal)}
+.tag.hanfu{border-color:var(--gold);color:#8a6d20}
+.links{margin-top:8px;font-size:13px}
+.links a{color:var(--pine);text-decoration:none;border-bottom:1px solid var(--mist-deep);margin-right:16px}
+.links a:hover,.links a:focus-visible{border-color:var(--seal);color:var(--seal);outline:none}
+.opt .body h3::before{content:"Optional · ";color:var(--gold);font-style:italic;font-size:.75em}
+
+/* tips */
+.tips{margin-top:64px;background:var(--paper);border:1px solid var(--mist-deep);padding:28px 30px}
+.tips h2{font-size:30px;margin-bottom:12px}
+.tips dl{display:grid;grid-template-columns:150px 1fr;gap:10px 20px;margin:0;font-size:14px}
+.tips dt{font-weight:600;color:var(--pine)}
+.tips dd{margin:0;color:#2f3a34}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 24px}
+
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:1fr}
+  .seal{display:none}
+  .fl{grid-template-columns:1fr}
+  .fl>div+div{border-left:0;border-top:1px solid var(--mist-deep)}
+  .stop{grid-template-columns:1fr;gap:10px}
+  .photo{width:100%;height:190px}
+  .time::before{content:"— "}
+  .tips dl{grid-template-columns:1fr}
+  .dayhead .note{margin-left:0}
+}
+@media print{body{background:#fff}.hero{padding:30px 0}main,.flights{padding:0}.day{break-inside:auto}.stop{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Shanghai & Hangzhou<span class="zh">上海 · 杭州 · 秋游</span></h1>
+      <p>Eight days of dumplings, crab roe and lamb skewers, a Hanfu afternoon in Yu Garden and a Hanfu morning on West Lake, and the Bund at blue hour. 19 – 26 September 2026.</p>
+      <div class="pax"><b>Travellers</b> — Susiana Benjamin, Rustam Suleman, Kevin Edward, Clara Tasia · China Southern booking HRD3LD</div>
+    </div>
+    <div class="seal" aria-hidden="true">秋<small>Sept 2026</small></div>
+  </div>
+</header>
+
+<section class="flights" aria-label="Flights">
+  <div class="fl">
+    <div>
+      <h3>Out · Saturday 19 Sept</h3>
+      <div class="leg"><b>00:20</b><span>CZ8354 Jakarta CGK T3 → Shenzhen SZX (arr 07:00)</span></div>
+      <div class="leg"><b>09:00</b><span>CZ3553 Shenzhen SZX → Shanghai Hongqiao SHA T2 (arr 11:25)</span></div>
+      <small>Row 61 then row 37 · Hongqiao station is next to the terminal — metro Line 2/10 into town.</small>
+    </div>
+    <div>
+      <h3>Home · Saturday 26 Sept</h3>
+      <div class="leg"><b>22:05</b><span>CZ8212 Shanghai Pudong PVG T2 → Guangzhou CAN (arr 00:30)</span></div>
+      <div class="leg"><b>08:05</b><span>CZ3037 Guangzhou CAN T2 → Jakarta CGK T3 (arr 12:15, Sun 27 Sept)</span></div>
+      <small>Row 38 then row 36 · Leave central Shanghai by 18:00 — Pudong is 45–60 min by car, ~1 h by metro.</small>
+    </div>
+    <div>
+      <h3>Trains · booked</h3>
+      <div class="leg"><b>13:22</b><span>Mon 21 Sept · Shanghai Hongqiao → Hangzhou East, arr 14:24</span></div>
+      <div class="leg"><b>13:23</b><span>Wed 23 Sept · Hangzhou East → Shanghai South, arr 14:32</span></div>
+      <small>Passport at the gate. The return arrives at Shanghai South (上海南站) — metro Line 1 into the centre.</small>
+    </div>
+  </div>
+</section>
+
+<main id="days"></main>
+
+<footer>Confirm hours, prices and branches on Amap / Dianping a few days before each stop. Photos are Wikimedia Commons images (CC-licensed); tap a photo's Wikimedia tag for the author credit.</footer>
+
+<script>
+const G=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const P=q=>"https://www.google.com/search?tbm=isch&q="+encodeURIComponent(q);
+// [time, name, zh, desc, category, mapsQuery, notes, wikiTitle, photoQuery, optional]
+const days=[
+{d:"Day 1 · Saturday 19 September",city:"Shanghai",note:"Arrival day — keep it gentle after the overnight flight",stops:[
+["11:25","Arrive Shanghai Hongqiao","上海虹桥","Land at T2, set up Alipay / WeChat Pay and an eSIM, then metro or Didi to the hotel and drop bags.","Transport","Shanghai Hongqiao International Airport","Passport works as ID for everything; download Amap before you leave the airport wifi","Shanghai_Hongqiao_International_Airport","Shanghai Hongqiao airport"],
+["13:30","Jia Jia Tang Bao","佳家汤包","Bib Gourmand xiaolongbao a short ride from the hotel; the crab-roe baskets are in season now.","Food","Jia Jia Tang Bao Huanghe Road Shanghai","~¥22–39 a basket · 90 Huanghe Rd · closes when sold out","Xiaolongbao","Jia Jia Tang Bao Shanghai"],
+["15:30","Wukang Road & Wukang Mansion","武康路","Plane-tree French Concession street ending at the wedge-shaped Wukang Mansion, the most photographed building in the city.","Scenery","Wukang Mansion Shanghai","Free · light hits the façade after 16:00 · shoot from the opposite corner","Wukang_Mansion","Wukang Mansion Shanghai"],
+["16:30","Anfu Road cafés","安福路","Coffee, pastries and boutiques two streets over, for the post-flight slump.","Food","Anfu Road Shanghai","Dessert cafés everywhere; sit outside if it's dry","Shanghai_French_Concession","Anfu Road Shanghai cafe"],
+["19:00","Long Time Ago","很久以前羊肉串","Hulunbuir lamb skewers on a self-rotating grill, cumin flying, free milk ice cream at the end.","Food","很久以前羊肉串 Shanghai","~¥115 pp · join the queue on the WeChat mini-program before you leave the café; 40 min – 3 h at peak","Chuan_(food)","很久以前羊肉串"]
+]},
+{d:"Day 2 · Sunday 20 September",city:"Shanghai",note:"Crab roe, then Hanfu at Yu Garden",stops:[
+["09:00","Yang's Fry-Dumpling","小杨生煎","Crispy-bottomed shengjianbao, the proper Shanghai breakfast.","Food","Yang's Fry Dumpling Shanghai","~¥8 for four · bite a corner first, the soup is hot","Shengjian_mantou","小杨生煎"],
+["11:30","Yuxing Ji crab-roe noodles","裕兴记·蟹黄面馆 (大世界店)","Century-old Suzhou noodle house near Xintiandi; the autumn special is the pure golden-roe 秃黄油面.","Food","裕兴记 蟹黄面馆 大世界店 Shanghai","≤¥100 pp · 07:30–14:30 · sells out — be there by 11:30 · free noodle refills · add vinegar","Chinese_mitten_crab","裕兴记 蟹黄面 Shanghai"],
+["13:30","Xintiandi","新天地","Restored shikumen lanes with cafés and shops; an easy walk-off after the noodles.","Shopping","Xintiandi Shanghai","Free to wander","Xintiandi","Xintiandi Shanghai"],
+["15:00","Yu Garden & the bazaar","豫园","Ming-dynasty rockeries, zigzag bridge and lantern-lit bazaar — the best Hanfu backdrop in Shanghai.","Scenery","Yu Garden Shanghai","Garden ~¥40 · bazaar free · glorious once the lanterns come on","Yu_Garden","Yu Garden Shanghai"],
+["15:30","Hanfu session at Yu Garden","豫园汉服","Rental with hair and makeup, then a photographer walks you round the pavilions until dusk.","Hanfu","Hanfu rental Yu Garden Shanghai","Rental ~¥100 · with makeup ~¥388 · full photo package ~$100–120 · book on Klook / Trip.com; arrive 2 h before you want to be out","Hanfu_yu","Hanfu Yu Garden Shanghai"],
+["18:30","Nanxiang Steamed Bun","南翔馒头店","Historic xiaolongbao house in the bazaar; crab-roe baskets upstairs.","Food","Nanxiang Mantou Yu Garden Shanghai","~¥75 for crab baskets · the upstairs sit-down floors move faster than the takeaway queue","Nanxiang_Steamed_Bun_Restaurant","南翔馒头店 豫园"]
+]},
+{d:"Day 3 · Monday 21 September",city:"Shanghai → Hangzhou",note:"Free Shanghai morning, 13:22 train, pagoda at sunset, night market",stops:[
+["09:30","Slow morning & Tianzifang","田子坊","Late breakfast, check out, then an hour in Tianzifang's art lanes if the group is up for it.","Scenery","Tianzifang Shanghai","Free · leave luggage at the hotel until 12:00","Tianzifang","Tianzifang Shanghai",1],
+["11:30","Early lunch, then to Hongqiao","上海虹桥站","Yang's shengjianbao or a noodle bowl near the hotel, then Didi or metro Line 2/10 to Hongqiao by 12:30.","Food","Yang's Fry Dumpling Shanghai","Allow 45 min to reach the station and 30 min for security","Shengjian_mantou","Shanghai Hongqiao railway station"],
+["13:22","Train G Shanghai Hongqiao → Hangzhou East","上海虹桥站 → 杭州东站","Booked: departs 13:22, arrives 14:24 (1 h 2 min).","Transport","Shanghai Hongqiao Railway Station","Passport is the ticket · gate opens ~15 min before · metro Line 1/4 or Didi from Hangzhou East to the hotel","Shanghai_Hongqiao_railway_station","Shanghai Hongqiao railway station"],
+["15:00","Check in & drop bags","酒店","Settle in near West Lake, then head straight to the south shore.","Transport","West Lake Hangzhou","Taxi from Hangzhou East ~30 min",  "West_Lake_hotel","West Lake Hangzhou hotel"],
+["16:30","Leifeng Pagoda","雷峰塔","The White Snake pagoda on the south shore, with panoramic views of the whole lake from the top.","Scenery","Leifeng Pagoda Hangzhou","~¥40 · escalators and a lift to the top · last entry around 19:30 in September","Leifeng_Pagoda","Leifeng Pagoda Hangzhou"],
+["17:40","Sunset from Long Bridge","长桥","'Leifeng Pagoda in Evening Glow', one of the Ten Scenes — Long Bridge is the classic angle back toward it.","Scenery","Long Bridge West Lake Hangzhou","Free · sunset around 17:50 in late September","West_Lake","Leifeng Pagoda sunset"],
+["19:00","Dinner at Grandma's Home","外婆家","Cheap, cheerful Hangzhou cooking: Dongpo pork, Longjing shrimp, tea-smoked duck — before or instead of the night market.","Food","Grandma's Home restaurant Hangzhou","~¥55–60 pp · take a wait ticket · Hubin branch is nearest the lake","Dongpo_pork","外婆家 Hangzhou"],
+["20:30","Wulin Night Market","武林夜市","Street food and craft stalls: stinky tofu, skewers, glutinous rice snacks, silk scarves.","Food","Wulin Night Market Hangzhou","17:30–23:00 · Alipay everywhere · taxi back from the Dujinsheng Silk Museum side","Stinky_tofu","Wulin Night Market Hangzhou"]
+]},
+{d:"Day 4 · Tuesday 22 September",city:"Hangzhou",note:"West Lake in Hanfu, tea hills, Hefang Street",stops:[
+["08:30","Su Causeway & Broken Bridge","苏堤 · 断桥","Walk or cycle the willow causeway while the lake is still misty and empty.","Scenery","Su Causeway West Lake Hangzhou","Free · the earlier the better; bikes via Alipay","Su_Causeway","Su Causeway West Lake"],
+["09:30","Hanfu session on West Lake","西湖汉服","Rental, makeup and a photographer along the lake shore and Broken Bridge.","Hanfu","Hanfu rental West Lake Hangzhou","Rental from ~$32 · 3-h shoot with makeup and 1-to-1 photographer ~¥300+ · premium up to ¥1,299 · Klook / Trip.com","Hanfu_wl","Hanfu West Lake Hangzhou"],
+["11:30","China National Tea Museum","中国茶叶博物馆","Free museum set among Longjing tea terraces — the calm, green half of the day.","Scenery","China National Tea Museum Hangzhou","Free · taxi 15 min from the lake · tea tasting on site","China_National_Tea_Museum","China National Tea Museum Hangzhou"],
+["13:00","Louwailou","楼外楼","The old lakeside house for West Lake vinegar fish, Dongpo pork and Longjing shrimp.","Food","Louwailou restaurant Hangzhou","Higher-end · vinegar fish divides people — order the shrimp and pork too","Louwailou","楼外楼 Hangzhou"],
+["15:00","Hefang Street","河坊街 · 清河坊","Historic pedestrian street of snack stalls, fans, silk and Hanfu shops.","Shopping","Hefang Street Hangzhou","Free · pick up lotus-root powder and silk","Qinghefang","Hefang Street Hangzhou"],
+["16:00","Osmanthus lotus root & Dingsheng cake","桂花糖藕 · 定胜糕","Hangzhou's sweets, eaten hot from the Gaoyin Street stalls.","Food","Gaoyin Street Hangzhou","~¥1–10 a portion · Gaoyin Street is prettiest after 19:00 if you come back","Osmanthus_fragrans","桂花糖藕 定胜糕"],
+["19:40","Impression West Lake","印象西湖 · 最忆是杭州","Zhang Yimou's outdoor show staged on the water at Yue Lake — the G20 gala production.","Scenery","Impression West Lake show Hangzhou","~¥300–960 · 55 min · shows 19:40 and 21:10 · book Trip.com with passport · weather-dependent","Impression_West_Lake","Impression West Lake show",1]
+]},
+{d:"Day 5 · Wednesday 23 September",city:"Hangzhou → Shanghai",note:"Rest day: a slow morning, an early lunch, the 13:23 train",stops:[
+["09:00","Meijiawu tea village","梅家坞","Tea hills west of the lake; taste this year's Longjing with the farmers.","Scenery","Meijiawu Tea Village Hangzhou","Taxi / Didi · skip entirely if the group would rather sleep in · be back in town by 11:00","Longjing_tea","Meijiawu Tea Village",1],
+["11:15","Zhiweiguan","知味观","Hangzhou's classic snack house — cat's-ear noodles, xiaolongbao, sweet soups — an early lunch before the train.","Food","Zhiweiguan restaurant Hangzhou","~¥80 pp · Renhe Road flagship · ground-floor snack counter is quickest · leave by 12:20 with luggage","Zhiweiguan","知味观 Hangzhou"],
+["13:23","Train Hangzhou East → Shanghai South","杭州东站 → 上海南站","Booked: departs 13:23, arrives Shanghai South (上海南站) 14:32 (1 h 9 min). Note this arrives at Shanghai South, not Hongqiao.","Transport","Hangzhou East Railway Station","Shanghai South is on metro Lines 1 and 3 — Line 1 runs straight to People's Square / Xujiahui","Hangzhou_East_railway_station","Shanghai South railway station"],
+["15:00","Check in & rest","酒店","Back at the Shanghai hotel; a free afternoon.","Transport","Shanghai South Railway Station","Line 1 to People's Square ~20 min","Shanghai_South_railway_station","Shanghai South railway station"],
+["19:00","Din Tai Fung","鼎泰丰","Refined, reliable xiaolongbao for a quiet first night back.","Food","Din Tai Fung Shanghai","Reserve · ~¥65+ a basket","Din_Tai_Fung","Din Tai Fung xiaolongbao"]
+]},
+{d:"Day 6 · Thursday 24 September",city:"Shanghai",note:"Shikumen lanes by day, the Bund at blue hour",stops:[
+["10:00","Zhangyuan","张园","Restored shikumen lifestyle district near Nanjing West Road; photogenic alleys and quiet courtyards.","Scenery","Zhangyuan Shanghai","Free","Shikumen","Zhangyuan Shanghai"],
+["12:00","Jing'an Temple","静安寺","A golden Buddhist temple hemmed in by skyscrapers.","Scenery","Jing'an Temple Shanghai","~¥50 · a quick visit","Jing'an_Temple","Jing'an Temple Shanghai"],
+["13:00","Lunch and a dessert café near Jing'an","静安","Shanghainese lunch, then one of the pastry-and-coffee cafés around the temple.","Food","dessert cafe Jing'an Shanghai","Plenty of choice; nothing to book","Shanghai_cuisine","Shanghai dessert cafe"],
+["16:30","The Bund","外滩","Heritage façades on one bank, the Pudong skyline on the other — arrive before dusk and stay for the lights.","Scenery","The Bund Shanghai","Free · lights come on around 19:00 · the sunset-to-blue-hour window is the shot","The_Bund","The Bund Shanghai night"],
+["19:00","Ferry across to Lujiazui","陆家嘴","The ¥2 commuter ferry over the Huangpu, then the towers lit up from below.","Scenery","Lujiazui Shanghai","Ferry Jinling E Rd ↔ Dongchang Rd, ~¥2, until 22:00 · Shanghai Tower deck ¥180 if you want to go up","Lujiazui","Lujiazui skyline night"],
+["20:30","Dinner with a river view","外滩 / 陆家嘴","A skyline-view table or casual eats back on the Puxi side.","Food","restaurant Lujiazui Shanghai","Book a river-view table a few days ahead","Huangpu_River","Bund view restaurant Shanghai"]
+]},
+{d:"Day 7 · Friday 25 September",city:"Shanghai Disneyland",note:"Mid-Autumn Festival public holiday — expect the busiest day of the trip",stops:[
+["08:00","Shanghai Disneyland","上海迪士尼乐园","Full day: TRON, Soarin', Pirates, the Enchanted Storybook Castle, and the fireworks at closing.","Scenery","Shanghai Disneyland","Buy dated tickets now (official app / Trip.com) · gates usually 08:30 · one park, no hopper · use the app for live wait times · park hours post ~2 weeks out","Shanghai_Disneyland","Shanghai Disneyland castle"],
+["13:00","Lunch in the park","园内午餐","Sit-down or quick service — mooncakes and seasonal snacks for the festival.","Food","Shanghai Disneyland","Mobile order through the app to skip lines","Shanghai_Disneyland","Shanghai Disneyland food"],
+["20:00","Fireworks over the castle","烟花","Stay to the end for the nighttime show.","Scenery","Shanghai Disneyland","Closing typically 20:30–22:00 · metro Line 11 runs after the show","Disney_fireworks","Shanghai Disneyland fireworks"]
+]},
+{d:"Day 8 · Saturday 26 September",city:"Shanghai → home",note:"Nanjing Road, a farewell skewer lunch, then Pudong for the 22:05 flight",stops:[
+["10:00","Nanjing Road","南京路","The pedestrian shopping street from People's Square to the Bund — souvenirs and mooncakes for home.","Shopping","Nanjing Road Pedestrian Street Shanghai","Free · busy — keep bags in front","Nanjing_Road","Nanjing Road Shanghai"],
+["12:30","Long Time Ago, People's Square branch","很久以前羊肉串","Farewell lamb-skewer lunch at the central branch.","Food","很久以前羊肉串 Nanjing Road Shanghai","~¥115 pp · queue via WeChat as you start walking Nanjing Road","Chuan_2","很久以前羊肉串 lamb skewers"],
+["14:30","Last dessert and packing","甜品","One more pastry stop, then collect luggage from the hotel.","Food","cafe Nanjing Road Shanghai","Mooncakes travel well","Mooncake","Shanghai mooncake"],
+["18:00","To Pudong Airport","上海浦东国际机场","Leave the city by 18:00 for the 22:05 China Southern flight from T2.","Transport","Shanghai Pudong International Airport T2","Car 45–60 min · metro Line 2 about 1 h · counters open 3 h before departure","Shanghai_Pudong_International_Airport","Shanghai Pudong International Airport"]
+]}
+];
+
+const IMG={"Shanghai_Hongqiao_International_Airport": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Shanghai_Hongqiao_2024_%28cropped%29.jpg/960px-Shanghai_Hongqiao_2024_%28cropped%29.jpg", "file": "Shanghai_Hongqiao_2024_(cropped).jpg"}, "Xiaolongbao": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/A_Xiaolongbao_from_The_Modern_Shanghai.jpg/960px-A_Xiaolongbao_from_The_Modern_Shanghai.jpg", "file": "A_Xiaolongbao_from_The_Modern_Shanghai.jpg"}, "Wukang_Mansion": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Wukang_Mansion_20251128.jpg/960px-Wukang_Mansion_20251128.jpg", "file": "Wukang_Mansion_20251128.jpg"}, "Shanghai_French_Concession": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/A_brunch_spot_at_Anfu_Rd.jpg/960px-A_brunch_spot_at_Anfu_Rd.jpg", "file": "A_brunch_spot_at_Anfu_Rd.jpg"}, "Chuan_(food)": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Chuan%27r_LED_sign_hanging_in_front_of_Beijing_shop.jpg/960px-Chuan%27r_LED_sign_hanging_in_front_of_Beijing_shop.jpg", "file": "Chuan'r_LED_sign_hanging_in_front_of_Beijing_shop.jpg"}, "Chuan_2": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Ju_Xiang_Yuan_Restaurant%2C_Ottawa_-_Grilled_Lamb_%286453828095%29.jpg/960px-Ju_Xiang_Yuan_Restaurant%2C_Ottawa_-_Grilled_Lamb_%286453828095%29.jpg", "file": "Ju_Xiang_Yuan_Restaurant,_Ottawa_-_Grilled_Lamb_(6453828095).jpg"}, "Shengjian_mantou": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Sheng_Jian_Bao_at_Xiao_Yang_Sheng_Jian_in_Shanghai_China.jpg/960px-Sheng_Jian_Bao_at_Xiao_Yang_Sheng_Jian_in_Shanghai_China.jpg", "file": "Sheng_Jian_Bao_at_Xiao_Yang_Sheng_Jian_in_Shanghai_China.jpg"}, "Chinese_mitten_crab": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/EriocheirSinensis1.jpg/960px-EriocheirSinensis1.jpg", "file": "EriocheirSinensis1.jpg"}, "Xintiandi": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Xintiandi5.jpg/960px-Xintiandi5.jpg", "file": "Xintiandi5.jpg"}, "Yu_Garden": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Shanghai_-_Yu_Garden_-_0035.jpg/960px-Shanghai_-_Yu_Garden_-_0035.jpg", "file": "Shanghai_-_Yu_Garden_-_0035.jpg"}, "Hanfu_yu": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Yu_Yuan_Gardens_and_Bazaar_%283019260559%29.jpg/960px-Yu_Yuan_Gardens_and_Bazaar_%283019260559%29.jpg", "file": "Yu_Yuan_Gardens_and_Bazaar_(3019260559).jpg"}, "Hanfu_wl": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/People_wearing_Hanfu_at_IDO32_%2820200118144012%29.jpg/960px-People_wearing_Hanfu_at_IDO32_%2820200118144012%29.jpg", "file": "People_wearing_Hanfu_at_IDO32_(20200118144012).jpg"}, "Nanxiang_Steamed_Bun_Restaurant": {"src": "https://upload.wikimedia.org/wikipedia/commons/5/52/Nanxiang_mantou_dian_by_Matt%27s_Life.jpg", "file": "Nanxiang_mantou_dian_by_Matt's_Life.jpg"}, "Tianzifang": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Shanghai_Tianzifang_%E4%B8%8A%E6%B5%B7%E7%94%B0%E5%AD%90%E5%9D%8A_-_panoramio.jpg/960px-Shanghai_Tianzifang_%E4%B8%8A%E6%B5%B7%E7%94%B0%E5%AD%90%E5%9D%8A_-_panoramio.jpg", "file": "Shanghai_Tianzifang_上海田子坊_-_panoramio.jpg"}, "Shanghai_Hongqiao_railway_station": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Shanghai_Hongqiao_Railway_Station_north_side.JPG/960px-Shanghai_Hongqiao_Railway_Station_north_side.JPG", "file": "Shanghai_Hongqiao_Railway_Station_north_side.JPG"}, "West_Lake": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/West_Lake%2C_Hangzhou_2025.jpg/960px-West_Lake%2C_Hangzhou_2025.jpg", "file": "West_Lake,_Hangzhou_2025.jpg"}, "West_Lake_hotel": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/West_Lake_IMG_8739_lakeside_park.jpg/960px-West_Lake_IMG_8739_lakeside_park.jpg", "file": "West_Lake_IMG_8739_lakeside_park.jpg"}, "Leifeng_Pagoda": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Leifeng_Pagoda_DJI_0593_%282%29.jpg/960px-Leifeng_Pagoda_DJI_0593_%282%29.jpg", "file": "Leifeng_Pagoda_DJI_0593_(2).jpg"}, "Dongpo_pork": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/BCfood12.JPG/960px-BCfood12.JPG", "file": "BCfood12.JPG"}, "Stinky_tofu": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Chinese_Snack_Foods_%2840693892792%29.jpg/960px-Chinese_Snack_Foods_%2840693892792%29.jpg", "file": "Chinese_Snack_Foods_(40693892792).jpg"}, "Su_Causeway": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Su_Causeway.JPG/960px-Su_Causeway.JPG", "file": "Su_Causeway.JPG"}, "China_National_Tea_Museum": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/China_National_Tea_Museum_3.jpg/960px-China_National_Tea_Museum_3.jpg", "file": "China_National_Tea_Museum_3.jpg"}, "Louwailou": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Louwailou_Restaurant_in_Gushan_Road_02_2018-01.jpg/960px-Louwailou_Restaurant_in_Gushan_Road_02_2018-01.jpg", "file": "Louwailou_Restaurant_in_Gushan_Road_02_2018-01.jpg"}, "Qinghefang": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Hangzhou_Hefang_Street_4.jpg/960px-Hangzhou_Hefang_Street_4.jpg", "file": "Hangzhou_Hefang_Street_4.jpg"}, "Osmanthus_fragrans": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/202308_West_Lake_Lotus_Root_Starch_with_Osmanthus_Topping.jpg/960px-202308_West_Lake_Lotus_Root_Starch_with_Osmanthus_Topping.jpg", "file": "202308_West_Lake_Lotus_Root_Starch_with_Osmanthus_Topping.jpg"}, "Impression_West_Lake": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Impressions_of_West_Lake_for_further_usages_in_Education_-3.jpg/960px-Impressions_of_West_Lake_for_further_usages_in_Education_-3.jpg", "file": "Impressions_of_West_Lake_for_further_usages_in_Education_-3.jpg"}, "Longjing_tea": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Longjing_Tea_field%2C_Dragon_Well_area%2C_Meijiawu_China.jpg/960px-Longjing_Tea_field%2C_Dragon_Well_area%2C_Meijiawu_China.jpg", "file": "Longjing_Tea_field,_Dragon_Well_area,_Meijiawu_China.jpg"}, "Zhiweiguan": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Zhi_Wei_Guan%2C_Longjing_Shrimps.jpg/960px-Zhi_Wei_Guan%2C_Longjing_Shrimps.jpg", "file": "Zhi_Wei_Guan,_Longjing_Shrimps.jpg"}, "Hangzhou_East_railway_station": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/20151226%E6%9D%AD%E5%B7%9E%E4%B8%9C%E7%AB%99%E8%A5%BF%E5%B9%BF%E5%9C%BA%E5%85%A8%E6%99%AF.jpg/960px-20151226%E6%9D%AD%E5%B7%9E%E4%B8%9C%E7%AB%99%E8%A5%BF%E5%B9%BF%E5%9C%BA%E5%85%A8%E6%99%AF.jpg", "file": "20151226杭州东站西广场全景.jpg"}, "Shanghai_South_railway_station": {"src": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Shanghai_South_Railway_Station_01.jpg", "file": "Shanghai_South_Railway_Station_01.jpg"}, "Din_Tai_Fung": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Taiwan_2009_Taipei_DinTaiFung_Dumpling_House_at_Pacific_Sogo_ZhongXiao_Store_FRD_9000.jpg/960px-Taiwan_2009_Taipei_DinTaiFung_Dumpling_House_at_Pacific_Sogo_ZhongXiao_Store_FRD_9000.jpg", "file": "Taiwan_2009_Taipei_DinTaiFung_Dumpling_House_at_Pacific_Sogo_ZhongXiao_Store_FRD_9000.jpg"}, "Shikumen": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/A_Type_of_Shikumen_Gable_in_ZhangYuan_Shanghai.JPG/960px-A_Type_of_Shikumen_Gable_in_ZhangYuan_Shanghai.JPG", "file": "A_Type_of_Shikumen_Gable_in_ZhangYuan_Shanghai.JPG"}, "Jing'an_Temple": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/%E9%9D%99%E5%AE%89%E5%AF%BA%C2%B7%E4%B8%8A%E6%B5%B7%E9%9D%99%E5%AE%89.jpg/960px-%E9%9D%99%E5%AE%89%E5%AF%BA%C2%B7%E4%B8%8A%E6%B5%B7%E9%9D%99%E5%AE%89.jpg", "file": "静安寺·上海静安.jpg"}, "Shanghai_cuisine": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Red_braised_pork_%2820141106191221%29.JPG/960px-Red_braised_pork_%2820141106191221%29.JPG", "file": "Red_braised_pork_(20141106191221).JPG"}, "The_Bund": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Bund_2.jpg/960px-The_Bund_2.jpg", "file": "The_Bund_2.jpg"}, "Lujiazui": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Lujiazui_Skyline_%28Night%29.jpg/960px-Lujiazui_Skyline_%28Night%29.jpg", "file": "Lujiazui_Skyline_(Night).jpg"}, "Huangpu_River": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/20090426_Shanghai_5243.jpg/960px-20090426_Shanghai_5243.jpg", "file": "20090426_Shanghai_5243.jpg"}, "Shanghai_Disneyland": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Enchanted_Storybook_Castle_of_Shanghai_Disneyland.jpg/960px-Enchanted_Storybook_Castle_of_Shanghai_Disneyland.jpg", "file": "Enchanted_Storybook_Castle_of_Shanghai_Disneyland.jpg"}, "Disney_fireworks": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Disneyland_Fireworks_Show.jpg/960px-The_Disneyland_Fireworks_Show.jpg", "file": "The_Disneyland_Fireworks_Show.jpg"}, "Mooncake": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Mooncake_3-4%2C_lotus_seed_paste.jpg/960px-Mooncake_3-4%2C_lotus_seed_paste.jpg", "file": "Mooncake_3-4,_lotus_seed_paste.jpg"}, "Nanjing_Road": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/East_Nanjing_Road_2020_%2850361842166%29.jpg/960px-East_Nanjing_Road_2020_%2850361842166%29.jpg", "file": "East_Nanjing_Road_2020_(50361842166).jpg"}, "Shanghai_Pudong_International_Airport": {"src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Pudong_International_Airport_Terminal_2.jpg/960px-Pudong_International_Airport_Terminal_2.jpg", "file": "Pudong_International_Airport_Terminal_2.jpg"}};
+const cls={Food:"food",Hanfu:"hanfu"};
+const main=document.getElementById("days");
+days.forEach(day=>{
+  const sec=document.createElement("section");sec.className="day";
+  sec.innerHTML=`<div class="dayhead"><h2>${day.d}</h2><span class="city">${day.city}</span><span class="note">${day.note}</span></div>`;
+  day.stops.forEach(s=>{
+    const [t,n,zh,desc,cat,mq,notes,wiki,pq,opt]=s;
+    const el=document.createElement("article");el.className="stop"+(opt?" opt":"");
+    el.innerHTML=`<div class="time">${t}</div>
+      <div class="photo">${IMG[wiki]?`<img src="${IMG[wiki].src}" alt="${n}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=ph>${zh.slice(0,1)}</div>'"><a class="credit" href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(IMG[wiki].file)}" target="_blank" rel="noopener">Wikimedia</a>`:`<div class="ph">${zh.slice(0,1)}</div>`}</div>
+      <div class="body"><h3>${n}<span class="zh">${zh}</span></h3><p>${desc}</p>
+        <div class="meta"><span class="tag ${cls[cat]||""}">${cat}</span>${notes}</div>
+        <div class="links"><a href="${G(mq)}" target="_blank" rel="noopener">Open in Google Maps</a><a href="${P(pq)}" target="_blank" rel="noopener">More photos</a></div></div>`;
+    sec.appendChild(el);
+  });
+  main.appendChild(sec);
+});
+
+// tips
+const tips=document.createElement("section");tips.className="tips";
+tips.innerHTML=`<h2>Before you go</h2><dl>
+<dt>Book now</dt><dd>Trains are booked. Still to do: dated Disneyland tickets for 25 Sept, and the two Hanfu sessions on Klook or Trip.com.</dd>
+<dt>Money</dt><dd>Alipay first, WeChat Pay second, both linked to a Visa or Mastercard with passport verification. Test a small payment at home. Carry a little cash.</dd>
+<dt>Maps and internet</dt><dd>Google Maps is unreliable inside China — use Amap (高德) or Apple Maps. A VPN is needed for Google, Instagram and WhatsApp. An eSIM with roaming data sidesteps most of it.</dd>
+<dt>Getting around</dt><dd>Alipay's metro QR works in both cities. Didi for taxis; show the Chinese address from this page.</dd>
+<dt>Weather</dt><dd>Late September runs about 25–29 °C by day, 20–23 °C at night. Rain and a late typhoon are possible — check the forecast 3–5 days out and keep hotels on free cancellation.</dd>
+<dt>Holidays</dt><dd>Mid-Autumn Festival is Friday 25 Sept, a three-day public holiday — Disneyland and the Bund will be busy from then on. Golden Week starts 1 Oct, after you've left.</dd>
+<dt>Hairy crab</dt><dd>Yangcheng Lake crab usually opens in the last week of September, so whole steamed crab is best on the final days. Crab-roe noodles and dumplings are excellent any day of the trip.</dd>
+<dt>If there's time</dt><dd>Songcheng's <i>Romance of the Song Dynasty</i> show, Xixi Wetland, Tianzifang, Lingyin Temple, or a Huangpu night cruise.</dd>
+</dl>`;
+main.appendChild(tips);
+
+</script>
+</body>
+</html>
